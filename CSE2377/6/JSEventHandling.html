@@ -1,56 +1,26 @@
-<html>
+<!doctype html>
+<html lang="en">
   <head>
-    <title>Event Handling</title>
-    <script>
-      function instructions() {
-        alert("Read the Instructions Carefully...");
-      }
-      function validate(){
-        alert("Validation...");
-      }
-      function clean() {
-        alert("Cleaning Process....");
-      }
-      function ptadisplay() {
-        document.getElementById("pta").disabled = true;
-      }
-        function focusdisplay() {
-            var inptext = document.getElementById('phone');
-            inptext.style.color = 'red';
-        }
-        function blurdisplay() {
-            var inptext = document.getElementById('phone');
-            inptext.style.color = 'black';
-        }
-    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JavaScript Event Handling</title>
+    <script src="JSEventHandling.js" defer></script>
   </head>
-  <body onload="instructions();">
-    <h1>Javascript Event Handling Demo</h1>
-    <form onsubmit="validate();" onreset="clean();">
-      Name: <input type="text" id="sname" onblur="alert('Name Required');"><br><br>
-      Phone No: <input type="text" id="phone" onfocus="focusdisplay()"; onblur="blurdisplay();"><br><br>
-      Contact Address:<textarea id="cta"></textarea> <br><br>
-      Permanent Address:<textarea id="pta"></textarea> <br><br>
-      <input type="button" value="Same as Contact Address" id="bt1" onclick="ptadisplay();" /> <br><br>
-      <a href="" id="l1" >Read Instructions</a><br><br>
-      <input type="submit" id="sb"><br><br>
-      <input type="reset" id="sb"><br><br>
-      <input type="button" value="Button-3" id="bt3"/> <br><br>
-    </form>
+  <body>
+    <main>
+      <h1>JavaScript Event Handling</h1>
+      <form id="address-form">
+        <p><label for="student-name">Name</label> <input id="student-name" name="name" required></p>
+        <p><label for="phone">Phone number</label> <input id="phone" name="phone" type="tel"></p>
+        <p><label for="contact-address">Contact address</label><br><textarea id="contact-address" name="contactAddress"></textarea></p>
+        <p><label for="permanent-address">Permanent address</label><br><textarea id="permanent-address" name="permanentAddress"></textarea></p>
+        <button id="copy-address" type="button">Copy contact address</button>
+        <button id="read-instructions" type="button">Read instructions</button>
+        <button type="submit">Submit</button>
+        <button type="reset">Clear</button>
+        <button id="extra-button" type="button">Extra button</button>
+        <p id="event-message" role="status" aria-live="polite"></p>
+      </form>
+    </main>
   </body>
-  <script>
-    var link = document.getElementById('l1');
-    link.onclick =  function () {
-        alert('Instructions Clicked...');
-    }
-
-    var b3 = document.getElementById('bt3');
-    b3.addEventListener("click", function () {
-        alert('Button-3 Clicked Listener-1');
-    }, false);
-    b3.addEventListener("click", function () {
-        alert('Button-3 Clicked Listener-2');
-    }, false);
-
-  </script>
 </html>

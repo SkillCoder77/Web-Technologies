@@ -1,24 +1,28 @@
-var express = require('express');
+import express from 'express';
+import loginRouter from './Routes/login.js';
+import signupRouter from './Routes/signup.js';
 
-var app = express();
+const app = express();
+const port = process.env.PORT || 8080;
 
-var loginroute = require('./Routes/login');
-var signuproute = require('./Routes/signup');
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 
-app.get('/', (req,res)=> {
-    res.send('Hello Lab');
+app.get('/', (_request, response) => {
+  response.send('Hello, Web Technologies Lab!');
 });
 
-app.use('/login', loginroute);
-app.use('/signup', signuproute);
+app.use('/login', loginRouter);
+app.use('/signup', signupRouter);
 
-app.get('/display/:uname/:pwd', (req,res)=> {
-    var values = req.params;
-    console.log(values);
-    console.log(req.query);
-    res.send('Values Received: ' + req.params.uname);
+// The path value is a username; optional extra values can be sent as a query.
+app.get('/display/:username', (request, response) => {
+  const { username } = request.params;
+  const { message = '' } = request.query;
+
+  response.type('text/plain').send(`Username: ${username}\nMessage: ${message}`);
 });
 
-app.listen(8080);
-
-
+app.listen(port, () => {
+  console.log(`Server is listening at http://localhost:${port}`);
+});

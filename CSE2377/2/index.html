@@ -1,34 +1,26 @@
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-    <title>Department Home Page</title>
-    <style>
-        h1 {
-            text-align: center;
-        }
-
-        h2 {
-            text-align: center;
-            color: purple;
-        }
-    </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Computer Science and Engineering Department</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-    <div style="background-color:#00FF5F;">
-        <h1 style="color:blue;">Muffakham Jah Collge of Engineering & Technology</h1>
+    <header>
+        <h1>Muffakham Jah College of Engineering &amp; Technology</h1>
         <h2>Computer Science and Engineering Department</h2>
-    </div>
-    <div>
-        <div id="divl" class="divleft">
-            <a href="index.html">About Department</a><br />
-            <a href="vision.html">Vision</a><br />
-            <a href="mission.html">Mission</a><br />
-        </div>
-        <div class="divright">
-            <img src="csed.jpeg" width="600px" height="300px" /><br />
-            <h3>About CSE Department</h3>
-            <p>Established in the year <span style="font-weight: bold;">1986</span>, the <span style="font-style: italic;font-weight: bold;">CSE Department</span> offers a 4-Year B.E-CSE Degree with an annual intake of
+    </header>
+    <div class="page-layout">
+        <nav aria-label="Department pages">
+            <a href="index.html" aria-current="page">About Department</a>
+            <a href="vision.html">Vision</a>
+            <a href="mission.html">Mission</a>
+        </nav>
+        <article>
+            <img src="csed.jpeg" alt="Computer Science and Engineering Department">
+            <h2>About the CSE Department</h2>
+            <p>Established in the year <strong>1986</strong>, the <em><strong>CSE Department</strong></em> offers a 4-Year B.E-CSE Degree with an annual intake of
                 180. The computer center has 13 laboratories catering to the needs of B.E-CSE. The computer centre
                 infrastructure consists of 7 servers (Compaq, IBM and Wipro), 339 desktop computer systems complemented
                 by 36 licensed software like Microsoft Products under Campus and School Agreement (CASA), Rational
@@ -50,7 +42,7 @@
 
             <p>The Computer Science and Engineering Department has 26 well experienced and qualified faculty members.
                 Among them there are 5 Doctorates and 17 are pursuing their Doctorate degrees.</p>
-        </div>
+        </article>
     </div>
 </body>
 </html>
