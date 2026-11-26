@@ -1,14 +1,15 @@
-var express = require('express');
+import express from 'express';
 
-var router = express.Router();
+const router = express.Router();
 
-router.get('/', (req,res)=> {
-    res.send('Login Page');
+router.get('/', (_request, response) => {
+  response.send('Login Page');
 });
 
-router.post('/', (req,res)=> {
-    res.send('Login Page');
+router.post('/', (request, response) => {
+  const { username = '' } = request.body ?? {};
+
+  response.type('text/plain').send(`Login submitted${username ? ` for ${username}` : ''}.`);
 });
 
-module.exports = router;
-
+export default router;

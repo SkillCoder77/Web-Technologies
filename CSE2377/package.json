@@ -1,0 +1,17 @@
+{
+  "name": "cse2377-web-technologies-labs",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "server:http": "node 7/index.js",
+    "server:express": "node 8/index.js",
+    "files:demo": "node 7/index.js --files-demo"
+  },
+  "dependencies": {
+    "express": "^5.3.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
